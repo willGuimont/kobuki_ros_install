@@ -7,6 +7,7 @@ sudo apt -y install ros-melodic-desktop # or sudo apt -y install ros-melodic-des
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 sudo apt -y install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+sudo -H pip3 install rosdep rospkg rosinstall_generator rosinstall wstool vcstools catkin_tools catkin_pkg
 sudo usermod -a -G dialout $USER
 sudo apt -y install python-catkin-tools python3-dev python3-numpy
 sudo rosdep init
@@ -33,7 +34,7 @@ sudo make install
 cd ~
 mkdir -p catkin_ws/src
 cd catkin_ws/
-catkin_make
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
 curl -sLf https://raw.githubusercontent.com/gaunthan/Turtlebot2-On-Melodic/master/install_basic.sh | bash
 sudo apt -y install ros-melodic-vision-opencv ros-melodic-cv-bridge ros-melodic-image-geometry ros-melodic-depth-image-proc
 catkin_make
@@ -53,4 +54,3 @@ rosrun kobuki_ftdi create_udev_rules
 # roslaunch kobuki_keyop safe_keyop.launch --screen
 
 # Now you should be able to control the kobuki using the arrow keys
-
