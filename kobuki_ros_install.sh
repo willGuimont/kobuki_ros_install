@@ -9,6 +9,7 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 sudo apt -y install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 sudo -H pip3 install rosdep rospkg rosinstall_generator rosinstall wstool vcstools catkin_tools catkin_pkg
+sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
 sudo usermod -a -G dialout $USER
 sudo apt -y install python-catkin-tools python3-dev python3-numpy
 sudo rosdep init
@@ -40,13 +41,15 @@ cd catkin_ws/
 catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
 curl -sLf https://raw.githubusercontent.com/gaunthan/Turtlebot2-On-Melodic/master/install_basic.sh | bash
 sudo apt -y install ros-melodic-vision-opencv ros-melodic-cv-bridge ros-melodic-image-geometry ros-melodic-depth-image-proc
+sudo apt -y install ros-melodic-freenect-* ros-melodic-depthimage-to-laserscan
+sudo apt -y install ros-melodic-openni*
 catkin_make
 
 # Setup udev rules
 source devel/setup.bash
 rosrun kobuki_ftdi create_udev_rules
 
-# To test run the following commands in two different terminals, in catkin_ws
+# To test run the following commands in two different terminals
 
 # In terminal #1
 # source devel/setup.bash
@@ -57,3 +60,5 @@ rosrun kobuki_ftdi create_udev_rules
 # roslaunch kobuki_keyop safe_keyop.launch --screen
 
 # Now you should be able to control the kobuki using the arrow keys
+
+# Kinect: http://wiki.ros.org/openni_launch/Tutorials/QuickStart
