@@ -46,7 +46,7 @@ catkin_make
 source devel/setup.bash
 rosrun kobuki_ftdi create_udev_rules
 
-# To test run the following commands in two different terminals
+# To test run the following commands in two different terminals, in catkin_ws
 
 # In terminal #1
 # source devel/setup.bash
