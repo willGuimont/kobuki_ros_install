@@ -43,10 +43,17 @@ curl -sLf https://raw.githubusercontent.com/gaunthan/Turtlebot2-On-Melodic/maste
 sudo apt -y install ros-melodic-vision-opencv ros-melodic-cv-bridge ros-melodic-image-geometry ros-melodic-depth-image-proc
 sudo apt -y install ros-melodic-freenect-* ros-melodic-depthimage-to-laserscan
 sudo apt -y install ros-melodic-openni*
+
+catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DINCLUDE_DPYTHON_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
+
+cd src
+git clone -b melodic https://github.com/ros-perception/vision_opencv.git
+cd ..
+
 catkin_make
+source devel/setup.bash
 
 # Setup udev rules
-source devel/setup.bash
 rosrun kobuki_ftdi create_udev_rules
 
 # To test run the following commands in two different terminals
