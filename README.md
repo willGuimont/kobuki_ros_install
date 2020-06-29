@@ -9,5 +9,5 @@ Requires `pip` and `pip3`
 # Usage
 ```bash
 chmod +x kobuki_ros_install.sh
-sudo ./kobuki_ros_install.sh
+./kobuki_ros_install.sh
 ```
