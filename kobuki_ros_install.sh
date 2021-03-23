@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Install Melodic ROS
+pip uninstall em
+pip3 uninstall em
 pip install empy
 pip3 install empy
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
