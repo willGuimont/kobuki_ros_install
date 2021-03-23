@@ -43,6 +43,7 @@ curl -sLf https://raw.githubusercontent.com/gaunthan/Turtlebot2-On-Melodic/maste
 sudo apt -y install ros-melodic-vision-opencv ros-melodic-cv-bridge ros-melodic-image-geometry ros-melodic-depth-image-proc
 sudo apt -y install ros-melodic-freenect-* ros-melodic-depthimage-to-laserscan
 sudo apt -y install ros-melodic-openni*
+sudo apt -y install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control
 
 catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DINCLUDE_DPYTHON_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
 
