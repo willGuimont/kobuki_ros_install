@@ -9,7 +9,7 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 sudo apt -y install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 sudo -H pip3 install rosdep rospkg rosinstall_generator rosinstall wstool vcstools catkin_tools catkin_pkg
-sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
+sudo apt -y install libcanberra-gtk-module libcanberra-gtk3-module
 sudo usermod -a -G dialout $USER
 sudo apt -y install python-catkin-tools python3-dev python3-numpy
 sudo rosdep init
@@ -22,7 +22,7 @@ sudo apt -y install ros-melodic-yocs-*
 # Install OpenCV 3.2
 sudo apt-get install build-essential
 cd ~
-sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get -y install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 curl https://codeload.github.com/opencv/opencv/zip/3.2.0 --output opencv.zip
 unzip opencv.zip
 cd opencv-3.2.0/
