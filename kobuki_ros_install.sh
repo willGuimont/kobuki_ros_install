@@ -38,6 +38,7 @@ cd ~
 rm opencv.zip
 
 # Catkin workspace
+source /opt/ros/melodic/setup.bash
 cd ~
 mkdir -p catkin_ws/src
 cd catkin_ws/
