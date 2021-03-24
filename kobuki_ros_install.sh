@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Install Melodic ROS
+pip uninstall em
+pip3 uninstall em
 pip install empy
+pip3 install empy
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt update
@@ -9,7 +12,7 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 sudo apt -y install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 sudo -H pip3 install rosdep rospkg rosinstall_generator rosinstall wstool vcstools catkin_tools catkin_pkg
-sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
+sudo apt -y install libcanberra-gtk-module libcanberra-gtk3-module
 sudo usermod -a -G dialout $USER
 sudo apt -y install python-catkin-tools python3-dev python3-numpy
 sudo rosdep init
@@ -22,7 +25,7 @@ sudo apt -y install ros-melodic-yocs-*
 # Install OpenCV 3.2
 sudo apt-get install build-essential
 cd ~
-sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get -y install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 curl https://codeload.github.com/opencv/opencv/zip/3.2.0 --output opencv.zip
 unzip opencv.zip
 cd opencv-3.2.0/
@@ -43,6 +46,7 @@ curl -sLf https://raw.githubusercontent.com/gaunthan/Turtlebot2-On-Melodic/maste
 sudo apt -y install ros-melodic-vision-opencv ros-melodic-cv-bridge ros-melodic-image-geometry ros-melodic-depth-image-proc
 sudo apt -y install ros-melodic-freenect-* ros-melodic-depthimage-to-laserscan
 sudo apt -y install ros-melodic-openni*
+sudo apt -y install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control
 
 catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DINCLUDE_DPYTHON_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
 
